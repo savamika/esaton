@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background: white;
+    position: relative;
+    height: 100%;
+    background: linear-gradient(to right, #0B234F, #1350A0);
+}
+
+
+
+.webicon {
+    width: 08vw; 
+    height: auto; 
+    margin-left: auto; 
+   padding:0.5vw;
+    margin-bottom: auto;
+}
+
+#description {
+    margin-right: 30vw;
+}
+.content {
+   
+    width: 100%;
+    margin:0;
+}
+
+.rounded-rectangle {
+    background: linear-gradient(to right, #0B234F, #1350A0);
+    padding: 2vw;
+    position: relative;
+    width: 100%;
+}
+
+.line-container {
+    position: relative;
+    width: 100%;
+    padding-bottom:20px;
+}
+
+.text {
+    display: flex;
+    justify-content: flex-start;
+}
+
+p {
+   
+    flex: 1;
+    color: #fff;
+    text-align: justify;  
+    text-align-last: left;
+    font-size: 20px;
+    margin: 0; 
+    font-family: poppins;
+    font-weight: bold;
+    hyphens: manual; 
+    padding: 2vw;
+    margin-right: 5vw;
+ 
+}
+
+
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left:3vw;
+}
+
+.esaton-icon {
+    width: 25vw; 
+    height: auto; 
+    padding: 2vw;
+}
+
+.blue-button:hover {
+    background-color: #003866;
+}
+
+.blue-button {
+    font-size: 18px; 
+    background-color: #0073e6;
+    color: #fff;
+    padding: 10px 40px; /* Increased horizontal padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 5px solid #1350A0;
+}
+
+
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    background: #0B234F; /* Darker shade for contrast */
+    color: #ffffff; /* White text for better readability */
+    text-align: center; /* Center-align the text */
+    border-top: 5px solid #1350A0; /* Blue top border for visual separation */
+    font-size: 16px; /* Optimal font size for readability */
+    font-family: 'Poppins', sans-serif; /* Maintain consistency in font usage */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifting effect */
+    position: relative; /* Needed for absolute positioning within */
+    z-index: 3; /* Ensure it's above other content */
+    display: flex; /* Flex layout for aligning items */
+    justify-content: start; /* Space between elements */
+    align-items: center; /* Center items vertically */
+    padding: 10px 30px; /* Padding for breathing space */
+}
+
+.footer a {
+    color: #aad8ff; /* Light blue for links to make them stand out */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for hover effects */
+}
+
+.footer a:hover {
+    color: #ffffff; /* White color on hover for emphasis */
+}
+
+.language-select select {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #0073e6; /* Blue background by default */
+    color: white; /* White text by default */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.language-select select:hover, .language-select select:focus {
+    background-color: #005cbf; /* Darker blue when hovered or focused */
+    outline: none; /* Remove default focus outline */
+}
+
+.language-select option {
+    background-color: grey; /* Grey background for options */
+    color: black; /* Black text for options */
+}
+
+
+
+
+.legal {
+    position: fixed; /* Fixed position to stay at the bottom */
+    bottom: 0; /* Align to the bottom of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    width: 100%; /* Full width to cover the area */
+    
+}
+
+
+.legal-text {
+    
+    align-content:center;
+    margin-left:25vw;
+    
+    
+    }
+
+.legal-text p {font-size: 20px;  margin:0;}

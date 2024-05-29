@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background: linear-gradient(to right, #0B234F, #1350A0);
+    position: relative;
+    height: 100%;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.webicon {
+    width: 10vw; 
+    height: auto; 
+    margin-left: auto; 
+}
+
+.content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    padding:30px;
+}
+
+.rounded-rectangle {
+    background: linear-gradient(to right, #0B234F, #1350A0);
+    border: 8px solid #fff;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.line-container {
+    position: relative;
+    width: 100%;
+}
+
+.text {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+p {
+    flex: 1;
+    color: #fff;
+    text-align: justify;  
+    text-align-last: left;
+    font-size: 20px;
+    margin: 0; 
+    margin-top: 20px;
+    font-family: poppins;
+    font-weight: bold;
+    hyphens: manual; 
+}
+
+
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.esaton-icon {
+    width: 28vw; 
+    height: auto; 
+}
+
+.blue-button:hover {
+    background-color: #003866;
+}
+
+.blue-button {
+    font-size: 18px; 
+    background-color: #0073e6;
+    color: #fff;
+    padding: 12px 24px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 5px solid #fff; /* Add white border */
+}
+
+
+
+.design-line {
+    height: 6px;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 40px; 
+}
+
+
+
+.language-select select {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #0073e6; /* Blue background by default */
+    color: white; /* White text by default */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.language-select select:hover, .language-select select:focus {
+    background-color: #005cbf; /* Darker blue when hovered or focused */
+    outline: none; /* Remove default focus outline */
+}
+
+.language-select option {
+    background-color: grey; /* Grey background for options */
+    color: black; /* Black text for options */
+}
+
+
+
+
+.legal-text {
+
+    align-content:center;
+    margin-left:15vw;
+    
+    }
+    .legal-text p {font-size: 15px;
+    margin:0;}
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    background: #0B234F; /* Darker shade for contrast */
+    color: #ffffff; /* White text for better readability */
+    text-align: center; /* Center-align the text */
+    border-top: 5px solid #1350A0; /* Blue top border for visual separation */
+    font-size: 16px; /* Optimal font size for readability */
+    font-family: 'Poppins', sans-serif; /* Maintain consistency in font usage */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifting effect */
+    position: relative; /* Needed for absolute positioning within */
+    z-index: 3; /* Ensure it's above other content */
+    display: flex; /* Flex layout for aligning items */
+    justify-content: start; /* Space between elements */
+    align-items: center;
+    padding: 20px 30px; /* Padding for breathing space */
+    margin:auto;
+
+    overflow: hidden;
+}
+
+.footer a {
+    color: #aad8ff; /* Light blue for links to make them stand out */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for hover effects */
+}
+
+.footer a:hover {
+    color: #ffffff; /* White color on hover for emphasis */
+}
+
+.language-select select {
+    padding: 8px 16px;
+    font-family: 'Poppins', sans-serif; /* Consistent font style */
+    cursor: pointer; /* Pointer on hover */
+
+
+    font-size: 18px; 
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 5px solid #1350A0;
+}
+
+.language-select select:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+/* Additional styles to ensure consistent look on all browsers */
+.language-select {
+    
+}
+
+
+.legal {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.legal-text {
+
+    align-content:center;
+    
+    }
+
+
+
+
+
+@media (max-width: 768px) {
+    .esaton-icon {
+        width: 40vw; 
+    }
+    
+    .webicon {
+        width: 15vw; 
+    }
+    .p { 
+        text-size: 15px;}
+}
+
+
+@media (max-width: 480px) {
+    .esaton-icon {
+        width: 50vw; 
+    }
+    
+
+ .p { 
+        text-size: 15px;}
+
+    .webicon {
+        width: 15vw; 
+    }
+}
+

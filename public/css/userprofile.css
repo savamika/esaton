@@ -1,0 +1,679 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0B234F, #1350A0);
+}
+
+
+.alignment {
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5vh;
+    gap: 2vw;
+}
+
+
+.user-container {
+    flex: 1; /* The chat container takes up the remaining space */
+    display: flex;
+    max-width: 80vw; /* Maximum width is 80% of the viewport width */
+    height: 80vh; /* Height of the chat container */
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+
+
+.side-menu {
+    z-index: 2;
+    background: #1350a0;
+    border-radius: 20px;
+    padding: 1rem;
+    z-index: 100;
+    transition: all 0.3s;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.menu-item {
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #0B234F;
+}
+
+.menu-item i {
+    margin-right: 15px;
+}
+
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-header h1 {
+    color: #0B234F;
+    margin: 0;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.import-button {
+    background: #007bff;
+    color: white;
+}
+
+.new-user-button {
+    background: #5cb85c;
+    color: white;
+}
+
+.user-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-search input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+}
+
+.role-filters {
+    display: flex;
+    gap: 10px;
+}
+
+.role-filter {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.admin { background: #f0ad4e; }
+.agent { background: #5bc0de; }
+.customer { background: #5cb85c; }
+
+
+.user-photo {
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Set the desired height */
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Ensure the image covers the container */
+    border: 2px solid #1350A0; /* Optional: Add a border to the photo */
+}
+
+.user-table {
+    width: 100%;
+    overflow-x: auto;
+
+}
+
+.user-table table {
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-table th:first-child, .user-table td:first-child {
+    text-align: center; /* Center align the photo column */
+}
+
+.user-table th {
+    background: #f8f8f8;
+}
+
+
+
+
+
+
+.modify-button,
+.delete-button {
+    padding: 5px 10px;
+    margin: 0 5px; /* Adds a little space between buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+}
+
+.modify-button {
+    background-color: #e9e9e9; /* Bootstrap warning color for modify */
+    color: black;
+}
+
+.modify-button:hover {
+    background-color: #e0a800; /* Darker shade for hover effect */
+}
+
+.delete-button {
+    background-color: #e9e9e9; /* Bootstrap danger color for delete */
+    color: black;
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Darker shade for hover effect */
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: none;
+    width: 40%; /* Adjust as per your preference */
+    border-radius: 10px; /* Rounded corners for modal */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: none;
+    width: 50%; /* Could be more or less, depending on screen size */
+    border-radius: 10px; /* Rounded corners for modal */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    position: relative; /* For absolute positioning of elements inside */
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal form .form-group {
+    display: flex;
+    flex-direction: column;
+    /* padding: 2%; */
+}
+
+.modal form .form-group label {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.modal form .form-group input[type="text"],
+.modal form .form-group input[type="email"],
+.modal form .form-group input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.modal form .form-group input[type="text"]:focus,
+.modal form .form-group input[type="email"]:focus,
+.modal form .form-group input[type="password"]:focus {
+    border-color: #1350A0;
+    box-shadow: 0 0 0 2px rgba(19, 80, 160, 0.25);
+    outline: none;
+}
+
+.modal form .buttons {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.modal form .button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+}
+
+.modal form .button:hover {
+    background-color: #0056b3;
+}
+
+.form-box .blue-button {
+    font-size: 18px;
+    background-color: #0073e6;
+    color: #fff;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 0px;
+    border: 5px solid #1350A0;}
+
+
+    .hamburger-menu {
+        display: none; /* Hide the hamburger menu icon by default */
+    }
+    .menu-item span {
+        display: none; /* Hide text labels on mobile */
+    }
+
+    .menu-item i {
+        margin-right: 5px;
+    }
+
+
+    .form-title {
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin: 0; /* Remove margin */
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+        border-radius: 5px;
+        display: inline-block; /* Only as wide as the content */
+    }
+
+
+
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+        margin-bottom: 20px; /* Spacing below the upload field */
+
+    }.custom-file-upload:hover {
+        background-color: #e8e8e8;
+    }
+
+
+
+    .form-group input[type="file"] {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+
+    .form-box {
+        background: #ffffff;
+        /* padding: 40px; */
+        /* border-radius: 20px; */
+        max-height: 70vh; /* Set max height to be less than the viewport height */
+        overflow-y: auto; /* Enable scrolling inside the form box if needed */
+        /* margin: 10px; Add some space around the form */
+        display: flex;
+        flex-direction: column;
+        width: 99%;
+        max-width: 900px;
+
+
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .form-row .form-group {
+        flex-basis: calc(50% - 10px); /* 50% width for each field, subtracting margin */
+    }
+
+    .form-row .form-group:first-child {
+        margin-right: 10px; /* Add margin between fields */
+    }
+
+    .form-row .form-group:last-child {
+        margin-left: 10px; /* Add margin between fields */
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group input[type="file"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+        font-size: 14px;
+    }
+
+    .form-group input[type="submit"] {
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 10px; /* Added margin for visual spacing */
+    }
+
+    .form-group input[type="submit"]:hover {
+        background-color: #005cbf;
+    }
+
+
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+        background-color: white;
+        font-size: 14px;
+        color: #333;
+    }
+
+
+    .form-group input:focus {
+        border: 2px solid #1350A0; /* Highlight color for input when it's focused */
+        outline: none; /* Remove the default outline */
+    }
+    /* Adjust the form group to handle both input and select */
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+        font-size: 14px;
+        color: #333;
+        background-color: white;
+    }
+
+
+
+    .form-box .blue-button {
+        font-size: 18px;
+        background-color: #0073e6;
+        color: #fff;
+        padding: 10px 40px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 0px;
+        border: 5px solid #1350A0;
+    }
+
+    .form-box .blue-button:hover {
+        background-color: #003865;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+/* On mobile */
+@media (max-width: 768px) {
+
+
+    .menu-item span {
+        display: none; /* Hide text labels on mobile */
+    }
+
+
+    body, html {
+            font-size: 12px; /* This sets the base font size smaller for all relative units */
+        }
+
+
+
+
+        .menu-item i {
+            margin-right: 5px;
+
+        }
+
+        .menu-item span {
+            display: none; /* Hide text labels on mobile */
+        }
+
+        .main-container {
+            padding-left: 0;
+            padding-right: 80px; /* Padding for the mobile menu */
+            width: auto; /* Full width on mobile */
+        }
+
+        .alignment {
+            flex-wrap: wrap;
+            margin: 0;
+            padding-top: 0;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+        }
+        .search-container input {
+            width: calc(100% - 0.2rem);
+        }
+
+        .search-container input,
+        .user-search input {
+            font-size: 14px; /* Smaller font size for search inputs */
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            transition: all 0.3s;
+            overflow-y: auto;
+            border-radius: 0px;
+            padding: 10px 0;
+            order: -1;
+        }
+
+
+        .sidebar {
+            width:30%;
+        }
+
+        .contact-list .contact {
+            padding: 3px;}
+        .messenger-container, .user-container {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+
+        }
+
+        .chat-area, .user-table {
+            width: 100%;
+        }
+
+        .chat-messages, .chat-footer, .user-header, .user-search {
+            padding: 0.5rem;
+        }
+
+        .form-row {
+            flex-direction: column;
+        }
+
+        .form-row .form-group {
+            margin: 0; /* Remove margin for form groups */
+        }
+
+        .form-group label, .user-table th, .user-table td {
+            font-size: 14px;
+        }
+
+        .chat-footer input, .chat-footer button {
+            padding: 0.5rem;
+        }
+
+        .chat-footer input,
+        .chat-footer button,
+        .button {
+            font-size: 14px; /* Smaller font size for input and buttons in the footer */
+        }
+
+        .button{
+            padding: 1rem 1rem;
+            font-size: 16px;
+        }
+
+        .menu-item {
+            justify-content: center;
+            padding: 10px;
+            font-size: 16px;
+        }
+        /* Adjust the modal for mobile screens */
+        .modal-content {
+            width: 90%;
+            margin: 20% auto;
+        }
+
+        .user-header h1 {
+            font-size: 18px; /* Adjust the font size for headers */
+        }
+
+        .user-table th,
+        .user-table td {
+            font-size: 14px; /* Smaller font size for table headers and cells */
+        }
+
+        .action-buttons button {
+            font-size: 12px; /* Smaller font size for action buttons */
+        }
+
+        .form-box .blue-button {
+            font-size: 16px; /* Smaller font size for submit buttons */
+        }
+
+
+        .hamburger-menu {
+            display: flex; /* Show the hamburger menu icon */
+            color: white;
+            margin: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            flex-direction: row-reverse;
+        }
+
+        .side-menu.active {
+            left: 0;
+        }
+
+    }
+
+
+
+
+
+
+}
+/* Rest of your CSS */
+
+/* Add additional styling for chat messages, buttons, and more as needed */

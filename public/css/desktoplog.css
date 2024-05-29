@@ -1,0 +1,391 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0B234F, #1350A0);
+}
+
+
+.main-container{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+}
+.successful{
+    font-weight: 700;
+
+}
+
+
+.navigation-container { 
+    position: relative;
+    margin-top: 4vh;
+    display: flex;
+   
+    z-index: 2;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.buttonis {
+    display:flex;
+   
+}
+
+.esaton{
+    align-items: stretch;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.content {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+   
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+  
+    justify-content: center;
+    z-index: 2;
+    top: 0;
+    margin:20px;
+}
+
+.esaton-icon {
+    width: 20vw; 
+    height: auto; 
+}
+
+.lorem {
+    color: white;
+   margin-bottom:4vw;
+    font-size: 1.5rem;
+    align: center;
+    margin:auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.button {
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: clamp(12px, 1vw, 15px);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    margin: 0;
+    padding: 1vw;
+    text-align: center;
+    display: inline-block;
+    
+}
+
+
+.rounded-rectangle {
+    padding-bottom: 4vw;
+   
+}
+.cancel-button {
+    background-color: #ffffff; /* Specific color for the cancel button */
+}
+
+.cancel-button:hover, .log-out-button:hover {
+    background-color: grey; /* Hover effect for both */
+}
+
+
+.cancel-button-container{
+
+    margin:20px;
+}
+
+.log-out-button {
+    background-color: #FF3B3F; /* Specific color for the log-out button */
+}
+
+.log-out-button:hover {
+    background-color: #C5292F;
+}
+.content-box {
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+}
+/* Checkmark styles */
+.checkmark-circle {
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;}
+
+
+.pops {
+    padding: 1vw;
+    align-items: center;
+    justify-content: center;
+
+     display: flex;
+     gap:25px;
+}
+
+
+.heading-counter{
+    text-align: center;
+    color:white;
+    padding-top: 2vw;
+}
+
+.close-button {
+    position: absolute;
+    top: 20%;
+    right:5%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.button,
+.button:active,
+.button:focus {
+    -webkit-appearance: none; /* Remove iOS default button styles */
+    -moz-appearance: none; /* Remove Firefox default button styles */
+    appearance: none;
+    outline: none; /* Remove the outline */
+}
+
+.chat-toggle,
+.chat-close {
+    display: none;
+}
+
+.chat-box {
+    margin: auto;
+    margin-top: 1vw;
+    margin-bottom: 5vw;
+    align-items: center;
+    max-width: 70%;
+    width: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+
+.chat-header {
+    background: linear-gradient(135deg, #007bff 0%, #4A90E2 100%);
+    color: #ffffff;
+    padding: 1vw; /* Reduced padding */
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.chat-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.chat-input:focus {
+    border-color: #0056b3;
+}
+
+.close-chat {
+    font-size: 22px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.close-chat:hover {
+    color: #ffb3b3;
+}
+
+.message {
+    background-color: #ffffff;
+    padding: 5px 10px; /* Reduced padding */
+    margin: 5px 0; /* Reduced margin */
+    border-radius: 15px;
+    font-size: 14px; /* Smaller text */
+}
+
+.received {
+    color: white;
+    background-color: #1350A0;
+    align-self: flex-start;
+}
+
+.sent {
+    color: white;
+    align-self: flex-end;
+    background-color: #007bff;
+}
+
+
+.chat-content {
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+   
+    overflow-y: auto;
+    background-color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Optional: Adds a subtle border */
+}
+
+
+
+
+
+.chat-input-container {
+   
+    display: flex;
+    gap: 20px;
+    margin-top: auto;
+}
+
+.chat-input {
+   
+    margin:auto;
+    flex-grow: 1;
+    padding: 1vw 1vw;
+    border-radius: 30px;
+    border: 2px solid #007bff;
+    outline: none;
+    font-size: 0.6rem;
+}
+
+.send-button {
+    background-color: #1350a0;
+    color: #ffffff;
+    padding: 1vw 3vw;
+    border-radius: 30px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #0b234f;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .esaton-icon {
+        width: 27vw;}
+
+    .close-button {
+
+        font-size: 1rem;
+    }
+
+    .chat-header{    
+        padding: 3vw;}
+
+    .chat-box {
+
+        max-width: 100%;
+    }
+
+    .checkmark-circle {
+        width: 8vw;
+        height: 8vw;}
+    .header,.cancel-button-container {
+        
+        margin: 1vw; /* Increase padding for smaller screens */
+    }
+
+    .lorem {
+        
+        margin-bottom:7vw;
+        font-size: 0.8rem;
+    
+    }
+
+    .rounded-rectangle {
+        padding-bottom: 6vw;
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .button{width: 20vw;}
+   .message, .counter {
+        font-size: 0.7rem; /* Increase font size for smaller screens */
+    }
+    
+    .content-box {
+        padding: 1vw; /* Increase padding for smaller screens */
+    }
+    
+    .counter-box {
+
+        padding-bottom: 5vw;
+    }
+    .counter-digits {
+        background: #0B234F;
+        border-radius: 5px;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        line-height: 50px;
+        margin: 0 5px;
+        width: 50px; /* Fixed width for the digits */
+        height: 50px; /* Fixed height for the digits */
+        text-align: center;
+    }
+ 
+
+    .chat-box {left: 30px;}
+    /* ... */
+}

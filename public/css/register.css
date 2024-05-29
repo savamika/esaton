@@ -1,0 +1,391 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0B234F, #1350A0);
+
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 2vw;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.form-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 0; /* Remove margin */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    border-radius: 5px;
+    display: inline-block; /* Only as wide as the content */
+}
+
+
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    margin-bottom: 20px; /* Spacing below the upload field */
+
+}.custom-file-upload:hover {
+    background-color: #e8e8e8;
+}
+
+
+
+.form-group input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.form-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 70vh; /* Set max height to be less than the viewport height */
+    overflow-y: auto; /* Enable scrolling inside the form box if needed */
+    margin: 30px; /* Add some space around the form */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+
+
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    flex-basis: calc(50% - 10px); /* 50% width for each field, subtracting margin */
+}
+
+.form-row .form-group:first-child {
+    margin-right: 10px; /* Add margin between fields */
+}
+
+.form-row .form-group:last-child {
+    margin-left: 10px; /* Add margin between fields */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 10px; /* Added margin for visual spacing */
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #005cbf;
+}
+
+
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    background-color: white;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.form-group input:focus {
+    border: 2px solid #1350A0; /* Highlight color for input when it's focused */
+    outline: none; /* Remove the default outline */
+}
+/* Adjust the form group to handle both input and select */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+    color: #333;
+    background-color: white;
+}
+
+
+
+.form-box .blue-button {
+    font-size: 18px;
+    background-color: #0073e6;
+    color: #fff;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 0px;
+    border: 5px solid #1350A0;
+}
+
+.form-box .blue-button:hover {
+    background-color: #003865;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.top-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links .sign-in,
+.nav-links .register {
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-links .register.active {
+    text-decoration: underline;
+}
+
+
+
+.form-switcher {
+    display: flex;
+    margin: 0;
+
+    padding: 10px 20px; /* Adjust padding to control the size of the tabs */
+    position: relative; /* Needed for z-index to take effect */
+
+}
+
+.switcher {
+    padding: 1vw 2vw;
+    border-radius: 25px;
+    font-size: clamp(12px, 1.5vw, 18px); /* clamp(min size, preferred size, max size) */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 10px; /* Optional: Add some horizontal margin between switchers */
+}
+
+.switcher.active {
+    background: #E8E8E8;
+    color: #0B234F;
+}
+
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 900px;
+    align-items: stretch;
+    padding: 10px 0; /* Add vertical padding */
+}
+
+.tabs-container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.cancel-button-container {
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.5vw;
+    z-index: 2;
+}
+
+
+.cancel-button {
+    background: none;
+    border: none;
+    font-size: clamp(12px, 1.5vw, 18px); /* clamp(min size, preferred size, max size) */
+    cursor: pointer;
+    margin: 0;
+    padding: 10px; /* Add padding to increase touch area */
+}
+
+.cancel-button:hover {
+    background-color: #e6e6e6;
+}
+
+
+.tabs-container,
+.cancel-button-container {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tabs-container .switcher,
+.cancel-button-container .cancel-button {
+    max-width: 200px; /* Maximum width of the switchers and cancel button */
+}
+
+
+.tab-cancel {display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+
+    position: relative;}
+
+    .form-group.password-group {
+        margin-bottom: 30px; /* Less space than usual to visually group them */
+    }
+
+    .form-group.password-group:last-of-type {
+        margin-bottom: 30px; /* Standard spacing to the next group or button */
+    }
+
+    .form-group.ref-group {
+        margin-bottom: 40px;
+    }
+@media (max-width: 768px) {
+    .content {
+        padding: 25px; /* Reduce padding on smaller screens */
+    }
+
+    .close-button {
+
+        font-size: 1rem;
+    }
+
+    .checkmark-circle {
+        width: 8vw;
+        height: 8vw;}
+
+    .form-box {
+        padding: 25px; /* Reduce padding inside the form */
+        margin: 20px; /* Reduce margin around the form */
+        max-height: 60vh;
+    }
+
+    .navigation-container,
+    .tabs-container,
+    .cancel-button-container {
+
+
+    }
+    .cancel-button,
+    .switcher {
+        font-size: 4vw;
+    }
+
+    .form-group label {
+        font-size: 14px;}
+}
+
+.content-box {
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 20%;
+    right:5%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.pops {
+    /* padding: 1vw; */
+    align-items: center;
+    justify-content: center;
+
+     display: flex;
+     gap:25px;
+}
+
+.checkmark-circle {
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+}
+
+.failed{
+    font-weight: 700;
+    color:red;
+}
